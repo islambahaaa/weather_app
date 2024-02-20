@@ -1,11 +1,6 @@
-import 'dart:developer';
-
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/cubits/get_weather_cubit/get_weather_cubit.dart';
-import 'package:weather_app/models/weather_model.dart';
-import 'package:weather_app/services/weather_services.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({Key? key}) : super(key: key);
@@ -17,7 +12,7 @@ class SearchView extends StatelessWidget {
         title: const Text('Search City'),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Center(
           child: TextField(
             onSubmitted: (value) async {
@@ -26,7 +21,7 @@ class SearchView extends StatelessWidget {
 
               Navigator.pop(context);
             },
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               label: Text('Search'),
               hintText: 'Enter Search City',
               contentPadding: EdgeInsets.symmetric(
